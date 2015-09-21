@@ -1,0 +1,147 @@
+<skin>
+	<colors>
+		<color name="foreground" value="#00ffffff" />
+		<color name="background" value="#40000000" />
+		<color name="rds_text_bg" value="#00003258" />
+		<color name="rssviewtop" value="#45005050" />
+		<color name="transparent" value="#ff111111" />
+		<color name="transpBlack" value="#80000000" />
+		<color name="transpWhite" value="#77ffffff" />
+		<color name="transpyellow" value="#33bab329" />
+		<color name="black" value="#00000000" />
+		<color name="dark" value="#00294a6b" />
+		<color name="darkgrey" value="#00999999" />
+		<color name="grey" value="#00bbbbbb" />
+		<color name="orange" value="#00f47d19" />
+		<color name="white" value="#00ffffff" />
+		<color name="blue" value="#000064c7" />										<!-- MetrixColors - Color Button Blue -->
+		<color name="green" value="#00389416" />									<!-- MetrixColors - Color Button Green -->
+		<color name="red" value="#00f23d21" />										<!-- MetrixColors - Color Button Red -->
+		<color name="yellow" value="#00e5b243" />									<!-- MetrixColors - Color Button Yellow -->
+		<color name="layer-a-channelselection-foreground" value="#00FFFFFF" />		<!-- MetrixColors - Foreground Channelselection layer a -->
+		<color name="layer-a-channelselection-foregroundColorSelected" value="#00FFFFFF" />					<!-- MetrixColors - Foreground Selected Channelselection layer a -->
+		<color name="layer-a-channelselection-foreground-ServiceDescription" value="#00BDBDBD" />			<!-- MetrixColors - Foreground Service Description Channelselection layer a -->
+		<color name="layer-a-channelselection-foreground-ServiceDescriptionSelected" value="#00FFFFFF" />	<!-- MetrixColors - Foreground Service Description Selected Channelselection layer a -->
+		<color name="layer-a-channelselection-foreground-colorServiceRecorded" value="#00E51400" />			<!-- MetrixColors - Foreground Service colorServiceRecorded Channelselection layer a -->
+		<color name="layer-a-channelselection-foreground-colorServicePseudoRecorded" value="#000000CD" />	<!-- MetrixColors - Foreground Service colorServicePseudoRecorded Channelselection layer a -->
+		<color name="layer-a-channelselection-foreground-colorServiceStreamed" value="#00C3461B" />			<!-- MetrixColors - Foreground Service colorServiceStreamed Channelselection layer a -->
+		<color name="layer-a-foreground" value="#00FFFFFF" />						<!-- MetrixColors - Foreground layer a -->
+		<color name="layer-a-background" value="#1A0F0F0F" />						<!-- MetrixColors - Background layer a -->
+		<color name="layer-a-selection-foreground" value="#00FFFFFF" />				<!-- MetrixColors - Foreground layer a for selected items -->
+		<color name="layer-a-selection-background" value="#1AC3461B" />				<!-- MetrixColors - Background layer a for selected items -->
+		<color name="layer-a-accent1" value="#00BDBDBD" />							<!-- MetrixColors - First accent layer a -->
+		<color name="layer-a-accent2" value="#006E6E6E" />							<!-- MetrixColors - Second accent layer a -->
+		<color name="layer-a-extendedinfo1" value="#00BDBDBD" />					<!-- MetrixColors - First extended info layer a -->
+		<color name="layer-a-extendedinfo2" value="#006E6E6E" />					<!-- MetrixColors - Second extended info layer a -->
+		<color name="layer-a-progress" value="#1AC3461B" />							<!-- MetrixColors - Progress layer a -->
+		<color name="layer-b-foreground" value="#00FFFFFF" />						<!-- MetrixColors - Foreground layer b -->
+		<color name="layer-b-background" value="#1AC3461B" />						<!-- MetrixColors - Background layer b -->
+		<color name="layer-b-selection-foreground" value="#00FFFFFF" />				<!-- MetrixColors - Foreground layer b for selected items -->
+		<color name="layer-b-selection-background" value="#1A0F0F0F" />				<!-- MetrixColors - Background layer b for selected items -->
+		<color name="layer-b-accent1" value="#00BDBDBD" />							<!-- MetrixColors - First accent layer b -->
+		<color name="layer-b-accent2" value="#006E6E6E" />							<!-- MetrixColors - Second accent layer b -->
+		<color name="layer-b-progress" value="#1AFFFFFF" />							<!-- MetrixColors - Progress layer b -->
+		<color name="background-text" value="#34FFFFFF" />							<!-- MetrixColors - Primary color for texts in background -->
+		<color name="text-background" value="#67FFFFFF" />							<!-- MetrixColors - Background color for texts in background -->
+		<color name="title-foreground" value="#00FFFFFF" />							<!-- MetrixColors - Foreground color for window title -->
+		<color name="title-background" value="#000F0F0F" />							<!-- MetrixColors - Background color for window title -->
+		<color name="epg-eventdescription-foreground" value="#00FFFFFF" />			<!-- MetrixColors - Graphical EPG Event description font color -->
+		<color name="epg-eventdescription-background" value="#1AC3461B" />			<!-- MetrixColors - Graphical EPG Event description background color -->
+		<color name="epg-event-foreground" value="#00FFFFFF" />						<!-- MetrixColors - Graphical EPG Event font color -->
+		<color name="epg-timeline-foreground" value="#00F0A30A" />					<!-- MetrixColors - Graphical EPG timeline font color -->
+		<color name="layer-a-title-foreground" value="#00FFFFFF" />					<!-- MetrixColors - Foreground color for window title in layer a -->
+		<color name="layer-a-button-foreground" value="#00FFFFFF" />				<!-- MetrixColors - Foreground color for button description in layer a -->
+		<color name="layer-a-clock-foreground" value="#00FFFFFF" />					<!-- MetrixColors - Foreground color for clock in layer a -->
+		<color name="layer-b-clock-foreground" value="#00FFFFFF" />					<!-- MetrixColors - Foreground color for clock in layer b -->
+		<color name="menubackground" value="#1A0F0F0F" />							<!-- MetrixColors - Background color for menu -->
+		<color name="menusymbolbackground" value="#1A0F0F0F" />						<!-- MetrixColors - Background color for menu symbol -->
+		<color name="menufont" value="#00FFFFFF" />									<!-- MetrixColors - Font color for menu item  -->
+		<color name="menufontselected" value="#00FFFFFF" />							<!-- MetrixColors - Font color for selected menu item -->
+		<color name="infobarbackground" value="#1A0F0F0F" />						<!-- MetrixColors - Background color for infobar,moviebar -->
+		<color name="infobarprogress" value="#1AC3461B" />							<!-- MetrixColors - Progressbar color for infobar,moviebar -->
+		<color name="infobarfont1" value="#00FFFFFF" />								<!-- MetrixColors - Font 1 color for infobar,moviebar -->
+		<color name="infobarfont2" value="#00BDBDBD" />								<!-- MetrixColors - Font 2 color for infobar,moviebar -->
+		<color name="infobaraccent1" value="#00BDBDBD" />							<!-- MetrixColors - AccentFont 1 color for infobar,moviebar -->
+		<color name="infobaraccent2" value="#006E6E6E" />							<!-- MetrixColors - AccentFont 2 color for infobar,moviebar -->
+		<color name="un18080911" value="#18080911" />
+		<color name="un1c202b" value="#001c202b" />
+		<color name="un1f771f" value="#001f771f" />
+		<color name="un240e1014" value="#240e1014" />
+		<color name="un44000000" value="#44000000" />
+		<color name="un444444" value="#00444444" />
+		<color name="un555555" value="#00555555" />
+		<color name="un5678a4" value="#005678a4" />
+		<color name="un56c856" value="#0056c856" />
+		<color name="un666666" value="#00666666" />
+		<color name="un800000" value="#00800000" />
+		<color name="un808888" value="#00808888" />
+		<color name="un9f1313" value="#009f1313" />
+		<color name="unbab329" value="#00bab329" />
+		<color name="und3d3d3" value="#00d3d3d3" />
+		<color name="undcaaaa" value="#00dcaaaa" />
+		<color name="undcdcdc" value="#00dcdcdc" />
+		<color name="unececec" value="#00ececec" />
+		<color name="unf0b400" value="#00f0b400" />
+		<color name="unfcc000" value="#00fcc000" />
+		<color name="unff" value="#000000ff" />
+		<color name="unff00" value="#0000ff00" />
+		<color name="unff0000" value="#00ff0000" />
+		<color name="unff000000" value="#ff000000" />
+		<color name="unff4a3c" value="#00ff4a3c" />
+		<color name="unffff00" value="#00ffff00" />
+		<color name="unffffff" value="#00ffffff" />
+	</colors>
+	<windowstyle type="skinned" id="0">
+		<title offset="5,0" font="global_title;35" />
+		<color name="Background" color="layer-a-background" />
+		<color name="LabelForeground" color="layer-a-foreground" />
+		<color name="ListboxBackground" color="layer-a-background" />
+		<color name="ListboxForeground" color="layer-a-foreground" />
+		<color name="ListboxSelectedBackground" color="layer-a-selection-background" />
+		<color name="ListboxSelectedForeground" color="layer-a-foreground" />
+		<color name="ListboxMarkedBackground" color="green" />
+		<color name="ListboxMarkedForeground" color="layer-a-foreground" />
+		<color name="ListboxMarkedAndSelectedBackground" color="blue" />
+		<color name="ListboxMarkedAndSelectedForeground" color="layer-a-foreground" />
+		<color name="WindowTitleForeground" color="title-foreground" />
+		<color name="WindowTitleBackground" color="title-background"/>
+<!-- stop_mod -->
+		<borderset name="bsWindow">
+			<!--pixmap pos="bpTopLeft" filename="MetrixHD/border/5px/0F0F0F.png" /-->
+			<pixmap pos="bpTop" filename="MetrixHD/border/50px/0F0F0F.png" />
+			<!--pixmap pos="bpTopRight" filename="MetrixHD/border/5px/0F0F0F.png" /-->
+			<pixmap pos="bpLeft" filename="MetrixHD/border/5px/0F0F0F.png" />
+			<pixmap pos="bpRight" filename="MetrixHD/border/5px/0F0F0F.png" />
+			<!--pixmap pos="bpBottomLeft" filename="MetrixHD/border/5px/0F0F0F.png" /-->
+			<pixmap pos="bpBottom" filename="MetrixHD/border/5px/0F0F0F.png" />
+			<!--pixmap pos="bpBottomRight" filename="MetrixHD/border/5px/0F0F0F.png" /-->
+		</borderset>
+		<borderset name="bsListboxEntry">
+			<!--lb pixmap pos="bpTop" filename="MetrixHD/border/1px/FFFFFF.png" /-->
+			<!--lb pixmap pos="bpBottom" filename="MetrixHD/border/1px/FFFFFF.png" /-->
+			<!--lb pixmap pos="bpLeft" filename="MetrixHD/border/1px/FFFFFF.png" /-->
+			<!--lb pixmap pos="bpRight" filename="MetrixHD/border/1px/FFFFFF.png" /-->
+		</borderset>
+		<!--borderset name="bsButton"-->
+			<!--bu pixmap pos="bpTop" filename="MetrixHD/border/1px/FFFFFF.png" /-->
+			<!--bu pixmap pos="bpBottom" filename="MetrixHD/border/1px/FFFFFF.png" /-->
+			<!--bu pixmap pos="bpLeft" filename="MetrixHD/border/1px/FFFFFF.png" /-->
+			<!--bu pixmap pos="bpRight" filename="MetrixHD/border/1px/FFFFFF.png" /-->
+		<!--/borderset-->
+<!-- run_mod -->
+	</windowstyle>
+	<windowstyle type="skinned" id="1">
+		<color name="Background" color="layer-a-background" />
+		<color name="LabelForeground" color="layer-a-foreground" />
+		<color name="ListboxBackground" color="layer-a-background" />
+		<color name="ListboxForeground" color="layer-a-foreground" />
+		<color name="ListboxSelectedBackground" color="layer-a-selection-background" />
+		<color name="ListboxSelectedForeground" color="layer-a-foreground" />
+		<color name="ListboxMarkedBackground" color="blue" />
+		<color name="ListboxMarkedForeground" color="layer-a-foreground" />
+		<color name="ListboxMarkedAndSelectedBackground" color="blue" />
+		<color name="ListboxMarkedAndSelectedForeground" color="layer-a-foreground" />
+		<color name="WindowTitleForeground" color="title-foreground" />
+		<color name="WindowTitleBackground" color="title-background"/>
+	</windowstyle>
+</skin>

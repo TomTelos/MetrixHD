@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 #######################################################################
 #
-#    MetrixWeather for Enigma2
+#    UserSkin for Enigma2
 #    Coded by iMaxxx (c) 2013
 #    Support: www.vuplus-support.com
 #
@@ -34,31 +34,31 @@ class MetrixHDWeather(Converter, object):
 	def getText(self):
 		try:
 			if self.type == "currentLocation":
-				return config.plugins.MetrixWeather.currentLocation.value
+				return config.plugins.UserSkin.currentLocation.value
 			if self.type == "currentWeatherTemp":
-				return config.plugins.MetrixWeather.currentWeatherTemp.value
+				return config.plugins.UserSkin.currentWeatherTemp.value
 			elif self.type == "currentWeatherText":
-				return config.plugins.MetrixWeather.currentWeatherText.value
+				return config.plugins.UserSkin.currentWeatherText.value
 			elif self.type == "currentWeatherCode":
-				return config.plugins.MetrixWeather.currentWeatherCode.value
+				return config.plugins.UserSkin.currentWeatherCode.value
 			elif self.type == "forecastTodayCode":
-				return config.plugins.MetrixWeather.forecastTodayCode.value
+				return config.plugins.UserSkin.forecastTodayCode.value
 			elif self.type == "forecastTodayTempMin":
-				return config.plugins.MetrixWeather.forecastTodayTempMin.value + " " + self.getCF()
+				return config.plugins.UserSkin.forecastTodayTempMin.value + " " + self.getCF()
 			elif self.type == "forecastTodayTempMax":
-				return config.plugins.MetrixWeather.forecastTodayTempMax.value + " " + self.getCF()
+				return config.plugins.UserSkin.forecastTodayTempMax.value + " " + self.getCF()
 			elif self.type == "forecastTodayText":
-				return config.plugins.MetrixWeather.forecastTodayText.value
+				return config.plugins.UserSkin.forecastTodayText.value
 			elif self.type == "forecastTomorrowCode":
-				return config.plugins.MetrixWeather.forecastTomorrowCode.value
+				return config.plugins.UserSkin.forecastTomorrowCode.value
 			elif self.type == "forecastTomorrowTempMin":
-				return config.plugins.MetrixWeather.forecastTomorrowTempMin.value + " " + self.getCF()
+				return config.plugins.UserSkin.forecastTomorrowTempMin.value + " " + self.getCF()
 			elif self.type == "forecastTomorrowTempMax":
-				return config.plugins.MetrixWeather.forecastTomorrowTempMax.value + " " + self.getCF()
+				return config.plugins.UserSkin.forecastTomorrowTempMax.value + " " + self.getCF()
 			elif self.type == "forecastTomorrowText":
-				return config.plugins.MetrixWeather.forecastTomorrowText.value
+				return config.plugins.UserSkin.forecastTomorrowText.value
 			elif self.type == "title":
-				return self.getCF() + " | " + config.plugins.MetrixWeather.currentLocation.value
+				return self.getCF() + " | " + config.plugins.UserSkin.currentLocation.value
 			elif self.type == "CF":
 				return self.getCF() 
 			else:
@@ -68,7 +68,7 @@ class MetrixHDWeather(Converter, object):
 		
 		
 	def getCF(self):
-		if config.plugins.MetrixWeather.tempUnit.value == "Fahrenheit":
+		if config.plugins.UserSkin.tempUnit.value == "Fahrenheit":
 			return "°F"
 		else: 
 			return "°C"

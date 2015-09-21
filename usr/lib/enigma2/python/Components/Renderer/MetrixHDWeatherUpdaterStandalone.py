@@ -31,7 +31,7 @@ from enigma import eLabel
 #import easy to use xml parser called minidom:
 from xml.dom.minidom import parseString
 from Components.config import config, configfile
-from Plugins.Extensions.MyMetrixLite.__init__ import initWeatherConfig
+from Components.MetrixHDWeatherInfo import initWeatherConfig
 from threading import Timer, Thread
 
 g_updateRunning = False
@@ -44,9 +44,9 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
         Renderer.__init__(self)
         VariableText.__init__(self)
         self.test = "3"
-        config.plugins.MetrixWeather.save()
+        config.plugins.UserSkin.save()
         configfile.save()
-        self.woeid = config.plugins.MetrixWeather.woeid.value
+        self.woeid = config.plugins.UserSkin.woeid.value
         self.timer = None
         self.startTimer()
         self.getWeather()
@@ -58,7 +58,7 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
             self.timer.cancel()
 
     def startTimer(self):
-        seconds = int(config.plugins.MetrixWeather.refreshInterval.value) * 60
+        seconds = int(config.plugins.UserSkin.refreshInterval.value) * 60
 
         if seconds < 60:
             seconds = 300
@@ -71,13 +71,13 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
         self.timer.start()
 
     def onShow(self):
-        self.text = config.plugins.MetrixWeather.currentWeatherCode.value
+        self.text = config.plugins.UserSkin.currentWeatherCode.value
 
     def getWeather(self):
         self.startTimer()
 
         # skip if weather-widget is disabled
-        if config.plugins.MetrixWeather.enabled.getValue() is False:
+        if config.plugins.UserSkin.enabled.getValue() is False:
             return
 
         global g_updateRunning
@@ -108,35 +108,35 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
 
         dom = parseString(data)
         title = self.getText(dom.getElementsByTagName('title')[0].childNodes)
-        config.plugins.MetrixWeather.currentLocation.value = str(title).split(',')[0].replace("Conditions for ","")
+        config.plugins.UserSkin.currentLocation.value = str(title).split(',')[0].replace("Conditions for ","")
 
         currentWeather = dom.getElementsByTagName('yweather:condition')[0]
         currentWeatherCode = currentWeather.getAttributeNode('code')
-        config.plugins.MetrixWeather.currentWeatherCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
+        config.plugins.UserSkin.currentWeatherCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('temp')
-        config.plugins.MetrixWeather.currentWeatherTemp.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.UserSkin.currentWeatherTemp.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherText = currentWeather.getAttributeNode('text')
-        config.plugins.MetrixWeather.currentWeatherText.value = currentWeatherText.nodeValue
+        config.plugins.UserSkin.currentWeatherText.value = currentWeatherText.nodeValue
 
         currentWeather = dom.getElementsByTagName('yweather:forecast')[0]
         currentWeatherCode = currentWeather.getAttributeNode('code')
-        config.plugins.MetrixWeather.forecastTodayCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
+        config.plugins.UserSkin.forecastTodayCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('high')
-        config.plugins.MetrixWeather.forecastTodayTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.UserSkin.forecastTodayTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('low')
-        config.plugins.MetrixWeather.forecastTodayTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.UserSkin.forecastTodayTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherText = currentWeather.getAttributeNode('text')
-        config.plugins.MetrixWeather.forecastTodayText.value = currentWeatherText.nodeValue
+        config.plugins.UserSkin.forecastTodayText.value = currentWeatherText.nodeValue
 
         currentWeather = dom.getElementsByTagName('yweather:forecast')[1]
         currentWeatherCode = currentWeather.getAttributeNode('code')
-        config.plugins.MetrixWeather.forecastTomorrowCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
+        config.plugins.UserSkin.forecastTomorrowCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('high')
-        config.plugins.MetrixWeather.forecastTomorrowTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.UserSkin.forecastTomorrowTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('low')
-        config.plugins.MetrixWeather.forecastTomorrowTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.UserSkin.forecastTomorrowTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherText = currentWeather.getAttributeNode('text')
-        config.plugins.MetrixWeather.forecastTomorrowText.value = currentWeatherText.nodeValue
+        config.plugins.UserSkin.forecastTomorrowText.value = currentWeatherText.nodeValue
         global g_updateRunning
         g_updateRunning = False
 
@@ -191,7 +191,7 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
         return str(condition)
 
     def getTemp(self,temp):
-        if config.plugins.MetrixWeather.tempUnit.value == "Fahrenheit":
+        if config.plugins.UserSkin.tempUnit.value == "Fahrenheit":
             return str(int(round(float(temp),0)))
         else:
             celsius = (float(temp) - 32 ) * 5 / 9
