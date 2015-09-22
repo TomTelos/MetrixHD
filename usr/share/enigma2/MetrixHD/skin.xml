@@ -2,7 +2,7 @@
 	<!-- MetrixHD v2.5 by iMaxxx | optimized for openATV 4.0 -->
 	<!-- recommended to use with XPicons -->
 	<!-- You can modify and redistribute it as long as you keep this license and the original author for the skin and all of your modifications -->
-	<!-- Modified by TomTelos for Graterlia OS (ver.2015-09-18)-->
+	<!-- Modified by TomTelos for Graterlia OS (ver.2015-09-22)-->
 	<output id="0">
 		<resolution xres="1280" yres="720" bpp="32" />
 	</output>
