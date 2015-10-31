@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 #######################################################################
 #
-#    UserSkin for Enigma2
+#    MetrixMODWeather for Enigma2
 #    Coded by iMaxxx (c) 2013
 #    Support: www.vuplus-support.com
 #
@@ -34,31 +34,31 @@ class MetrixHDWeather(Converter, object):
 	def getText(self):
 		try:
 			if self.type == "currentLocation":
-				return config.plugins.UserSkin.currentLocation.value
+				return config.plugins.AtileHD.currentLocation.value
 			if self.type == "currentWeatherTemp":
-				return config.plugins.UserSkin.currentWeatherTemp.value
+				return config.plugins.AtileHD.currentWeatherTemp.value
 			elif self.type == "currentWeatherText":
-				return config.plugins.UserSkin.currentWeatherText.value
+				return config.plugins.AtileHD.currentWeatherText.value
 			elif self.type == "currentWeatherCode":
-				return config.plugins.UserSkin.currentWeatherCode.value
+				return config.plugins.AtileHD.currentWeatherCode.value
 			elif self.type == "forecastTodayCode":
-				return config.plugins.UserSkin.forecastTodayCode.value
+				return config.plugins.AtileHD.forecastTodayCode.value
 			elif self.type == "forecastTodayTempMin":
-				return config.plugins.UserSkin.forecastTodayTempMin.value + " " + self.getCF()
+				return config.plugins.AtileHD.forecastTodayTempMin.value + " " + self.getCF()
 			elif self.type == "forecastTodayTempMax":
-				return config.plugins.UserSkin.forecastTodayTempMax.value + " " + self.getCF()
+				return config.plugins.AtileHD.forecastTodayTempMax.value + " " + self.getCF()
 			elif self.type == "forecastTodayText":
-				return config.plugins.UserSkin.forecastTodayText.value
+				return config.plugins.AtileHD.forecastTodayText.value
 			elif self.type == "forecastTomorrowCode":
-				return config.plugins.UserSkin.forecastTomorrowCode.value
+				return config.plugins.AtileHD.forecastTomorrowCode.value
 			elif self.type == "forecastTomorrowTempMin":
-				return config.plugins.UserSkin.forecastTomorrowTempMin.value + " " + self.getCF()
+				return config.plugins.AtileHD.forecastTomorrowTempMin.value + " " + self.getCF()
 			elif self.type == "forecastTomorrowTempMax":
-				return config.plugins.UserSkin.forecastTomorrowTempMax.value + " " + self.getCF()
+				return config.plugins.AtileHD.forecastTomorrowTempMax.value + " " + self.getCF()
 			elif self.type == "forecastTomorrowText":
-				return config.plugins.UserSkin.forecastTomorrowText.value
+				return config.plugins.AtileHD.forecastTomorrowText.value
 			elif self.type == "title":
-				return self.getCF() + " | " + config.plugins.UserSkin.currentLocation.value
+				return self.getCF() + " | " + config.plugins.AtileHD.currentLocation.value
 			elif self.type == "CF":
 				return self.getCF() 
 			else:
@@ -68,7 +68,7 @@ class MetrixHDWeather(Converter, object):
 		
 		
 	def getCF(self):
-		if config.plugins.UserSkin.tempUnit.value == "Fahrenheit":
+		if config.plugins.AtileHD.tempUnit.value == "Fahrenheit":
 			return "°F"
 		else: 
 			return "°C"

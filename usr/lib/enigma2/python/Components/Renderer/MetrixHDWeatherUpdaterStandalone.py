@@ -44,9 +44,9 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
         Renderer.__init__(self)
         VariableText.__init__(self)
         self.test = "3"
-        config.plugins.UserSkin.save()
+        config.plugins.AtileHD.save()
         configfile.save()
-        self.woeid = config.plugins.UserSkin.woeid.value
+        self.woeid = config.plugins.AtileHD.woeid.value
         self.timer = None
         self.startTimer()
         self.getWeather()
@@ -58,7 +58,7 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
             self.timer.cancel()
 
     def startTimer(self):
-        seconds = int(config.plugins.UserSkin.refreshInterval.value) * 60
+        seconds = int(config.plugins.AtileHD.refreshInterval.value) * 60
 
         if seconds < 60:
             seconds = 300
@@ -71,13 +71,13 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
         self.timer.start()
 
     def onShow(self):
-        self.text = config.plugins.UserSkin.currentWeatherCode.value
+        self.text = config.plugins.AtileHD.currentWeatherCode.value
 
     def getWeather(self):
         self.startTimer()
 
         # skip if weather-widget is disabled
-        if config.plugins.UserSkin.enabled.getValue() is False:
+        if config.plugins.AtileHD.enabled.getValue() is False:
             return
 
         global g_updateRunning
@@ -108,35 +108,35 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
 
         dom = parseString(data)
         title = self.getText(dom.getElementsByTagName('title')[0].childNodes)
-        config.plugins.UserSkin.currentLocation.value = str(title).split(',')[0].replace("Conditions for ","")
+        config.plugins.AtileHD.currentLocation.value = str(title).split(',')[0].replace("Conditions for ","")
 
         currentWeather = dom.getElementsByTagName('yweather:condition')[0]
         currentWeatherCode = currentWeather.getAttributeNode('code')
-        config.plugins.UserSkin.currentWeatherCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
+        config.plugins.AtileHD.currentWeatherCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('temp')
-        config.plugins.UserSkin.currentWeatherTemp.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.AtileHD.currentWeatherTemp.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherText = currentWeather.getAttributeNode('text')
-        config.plugins.UserSkin.currentWeatherText.value = currentWeatherText.nodeValue
+        config.plugins.AtileHD.currentWeatherText.value = currentWeatherText.nodeValue
 
         currentWeather = dom.getElementsByTagName('yweather:forecast')[0]
         currentWeatherCode = currentWeather.getAttributeNode('code')
-        config.plugins.UserSkin.forecastTodayCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
+        config.plugins.AtileHD.forecastTodayCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('high')
-        config.plugins.UserSkin.forecastTodayTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.AtileHD.forecastTodayTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('low')
-        config.plugins.UserSkin.forecastTodayTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.AtileHD.forecastTodayTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherText = currentWeather.getAttributeNode('text')
-        config.plugins.UserSkin.forecastTodayText.value = currentWeatherText.nodeValue
+        config.plugins.AtileHD.forecastTodayText.value = currentWeatherText.nodeValue
 
         currentWeather = dom.getElementsByTagName('yweather:forecast')[1]
         currentWeatherCode = currentWeather.getAttributeNode('code')
-        config.plugins.UserSkin.forecastTomorrowCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
+        config.plugins.AtileHD.forecastTomorrowCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('high')
-        config.plugins.UserSkin.forecastTomorrowTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.AtileHD.forecastTomorrowTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherTemp = currentWeather.getAttributeNode('low')
-        config.plugins.UserSkin.forecastTomorrowTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
+        config.plugins.AtileHD.forecastTomorrowTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
         currentWeatherText = currentWeather.getAttributeNode('text')
-        config.plugins.UserSkin.forecastTomorrowText.value = currentWeatherText.nodeValue
+        config.plugins.AtileHD.forecastTomorrowText.value = currentWeatherText.nodeValue
         global g_updateRunning
         g_updateRunning = False
 
@@ -191,7 +191,7 @@ class MetrixHDWeatherUpdaterStandalone(Renderer, VariableText):
         return str(condition)
 
     def getTemp(self,temp):
-        if config.plugins.UserSkin.tempUnit.value == "Fahrenheit":
+        if config.plugins.AtileHD.tempUnit.value == "Fahrenheit":
             return str(int(round(float(temp),0)))
         else:
             celsius = (float(temp) - 32 ) * 5 / 9

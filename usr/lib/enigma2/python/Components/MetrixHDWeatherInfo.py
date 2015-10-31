@@ -26,15 +26,15 @@ import gettext
 #############################################################
 
 def initWeatherConfig():
-    config.plugins.UserSkin = ConfigSubsection()
+    config.plugins.AtileHD = ConfigSubsection()
 
-    #UserSkin
+    #AtileHD
 
-    config.plugins.UserSkin.enabled = ConfigYesNo(default=True)
-    config.plugins.UserSkin.MoviePlayer = ConfigYesNo(default=True)
-    config.plugins.UserSkin.refreshInterval = ConfigNumber(default=60)
-    config.plugins.UserSkin.woeid = ConfigNumber(default=676757) #Location (visit metrixhd.info)
-    config.plugins.UserSkin.tempUnit = ConfigSelection(default="Celsius", choices = [
+    config.plugins.AtileHD.enabled = ConfigYesNo(default=True)
+    config.plugins.AtileHD.MoviePlayer = ConfigYesNo(default=True)
+    config.plugins.AtileHD.refreshInterval = ConfigNumber(default=60)
+    config.plugins.AtileHD.woeid = ConfigNumber(default=676757) #Location (visit metrixhd.info)
+    config.plugins.AtileHD.tempUnit = ConfigSelection(default="Celsius", choices = [
         ("Celsius", _("Celsius")),
         ("Fahrenheit", _("Fahrenheit"))
     ])
@@ -42,19 +42,19 @@ def initWeatherConfig():
 
     ## RENDERER CONFIG:
 
-    config.plugins.UserSkin.currentLocation = ConfigText(default="N/A")
-    config.plugins.UserSkin.currentWeatherCode = ConfigText(default="(")
-    config.plugins.UserSkin.currentWeatherText = ConfigText(default="N/A")
-    config.plugins.UserSkin.currentWeatherTemp = ConfigText(default="0")
+    config.plugins.AtileHD.currentLocation = ConfigText(default="N/A")
+    config.plugins.AtileHD.currentWeatherCode = ConfigText(default="(")
+    config.plugins.AtileHD.currentWeatherText = ConfigText(default="N/A")
+    config.plugins.AtileHD.currentWeatherTemp = ConfigText(default="0")
 
-    config.plugins.UserSkin.forecastTodayCode = ConfigText(default="(")
-    config.plugins.UserSkin.forecastTodayText = ConfigText(default="N/A")
-    config.plugins.UserSkin.forecastTodayTempMin = ConfigText(default="0")
-    config.plugins.UserSkin.forecastTodayTempMax = ConfigText(default="0")
+    config.plugins.AtileHD.forecastTodayCode = ConfigText(default="(")
+    config.plugins.AtileHD.forecastTodayText = ConfigText(default="N/A")
+    config.plugins.AtileHD.forecastTodayTempMin = ConfigText(default="0")
+    config.plugins.AtileHD.forecastTodayTempMax = ConfigText(default="0")
 
-    config.plugins.UserSkin.forecastTomorrowCode = ConfigText(default="(")
-    config.plugins.UserSkin.forecastTomorrowText = ConfigText(default="N/A")
-    config.plugins.UserSkin.forecastTomorrowTempMin = ConfigText(default="0")
-    config.plugins.UserSkin.forecastTomorrowTempMax = ConfigText(default="0")
+    config.plugins.AtileHD.forecastTomorrowCode = ConfigText(default="(")
+    config.plugins.AtileHD.forecastTomorrowText = ConfigText(default="N/A")
+    config.plugins.AtileHD.forecastTomorrowTempMin = ConfigText(default="0")
+    config.plugins.AtileHD.forecastTomorrowTempMax = ConfigText(default="0")
 
 #######################################################################
