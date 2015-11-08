@@ -1,0 +1,7 @@
+<skin>
+	<screen name="EPGSelectionMulti" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="EPGSELECTIONMULTI-2" />
+	</screen>
+</skin>
+
+

@@ -2,7 +2,7 @@
 	<!-- MetrixHD v2.5 by iMaxxx | optimized for openATV 4.0 -->
 	<!-- recommended to use with XPicons -->
 	<!-- You can modify and redistribute it as long as you keep this license and the original author for the skin and all of your modifications -->
-	<!-- Modified by TomTelos for Graterlia OS (ver.2015-09-22)-->
+	<!-- Modified by TomTelos for Graterlia OS (ver.2015-11-08)-->
 	<output id="0">
 		<resolution xres="1280" yres="720" bpp="32" />
 	</output>
@@ -1212,6 +1212,58 @@
 			</widget>
 			<!-- Sat-Position */-->
 		</screen>
+		<screen name="INFOBARRESOLUTION-3">
+			<!-- /* ResolutionInfo -->
+			<widget source="session.CurrentService" render="Label" position="634,668" size="70,25" font="infobar_text; 22" halign="right" valign="center" backgroundColor="infobaraccent1" foregroundColor="infobarbackground" transparent="0">
+				<convert type="ServiceInfo">VideoWidth</convert>
+			</widget>
+			<eLabel text="x" position="704,668" size="16,25" font="infobar_text; 22" halign="center" valign="center" backgroundColor="infobaraccent1" foregroundColor="infobarbackground" transparent="0" />
+			<widget source="session.CurrentService" render="Label" position="719,668" size="70,25" font="infobar_text; 22" halign="left" valign="center" backgroundColor="infobaraccent1" foregroundColor="infobarbackground" transparent="0">
+				<convert type="ServiceInfo">VideoHeight</convert>
+			</widget>
+			<!-- ResolutionInfo */ -->
+		</screen>
+		<screen name="INFOBARSNR-3">
+			<!-- /* SNR -->
+			<eLabel text="SNR:" position="375,668" size="55,25" font="infobar_text; 22" halign="right" valign="center" backgroundColor="infobaraccent1" foregroundColor="infobarbackground" transparent="0" />
+			<widget source="session.FrontendStatus" render="Label" position="430,668" size="78,25" font="infobar_text; 22" noWrap="1" backgroundColor="infobaraccent1" foregroundColor="infobarbackground" transparent="0" halign="center">
+				<convert type="FrontendInfo">SNR</convert>
+			</widget>
+			<!-- SNR */-->
+		</screen>
+		<screen name="INFOBARORBITALPOSITION-3">
+			<!-- /* Sat-Position -->
+			<widget source="session.CurrentService" render="Label" position="521,668" size="100,25" font="infobar_text; 22" halign="center" valign="center" backgroundColor="infobaraccent1" foregroundColor="infobarbackground" transparent="0">
+				<convert type="ServiceOrbitalPosition" />
+			</widget>
+			<!-- Sat-Position */-->
+		</screen>
+		<screen name="INFOBARTUNERINFO-2_5">
+			<!-- /* TunerInfo -->
+			<eLabel position="322,668" text="A" zPosition="1" size="20,25" font="infobar_text; 22" halign="center" transparent="0" valign="center" backgroundColor="infobaraccent2" foregroundColor="infobarbackground" />
+			<widget position="322,668" text="A" source="session.TunerInfo" render="FixedLabel" zPosition="2" size="20,25" font="infobar_text; 22" halign="center" transparent="0" valign="center" backgroundColor="infobaraccent1" foregroundColor="infobarbackground">
+				<convert type="TunerInfo">TunerUseMask</convert>
+				<convert type="ValueBitTest">1</convert>
+				<convert type="ConditionalShowHide" />
+			</widget>
+			<widget position="322,695" source="session.FrontendInfo" render="FixedLabel" zPosition="5" size="20,3" backgroundColor="infobarprogress" transparent="0" >
+				<convert type="FrontendInfo">NUMBER</convert>
+				<convert type="ValueRange">0,0</convert>
+				<convert type="ConditionalShowHide" />
+			</widget>
+			<eLabel position="342,668" text="B" zPosition="1" size="20,25" font="infobar_text; 22" halign="center" transparent="0" valign="center" backgroundColor="infobaraccent2" foregroundColor="infobarbackground" />
+			<widget position="342,668" text="B" source="session.TunerInfo" render="FixedLabel" zPosition="2" size="20,25" font="infobar_text; 22" halign="center" transparent="0" valign="center" backgroundColor="infobaraccent1" foregroundColor="infobarbackground">
+				<convert type="TunerInfo">TunerUseMask</convert>
+				<convert type="ValueBitTest">2</convert>
+				<convert type="ConditionalShowHide" />
+			</widget>
+			<widget position="342,695" source="session.FrontendInfo" render="FixedLabel" zPosition="3" size="20,3" backgroundColor="infobarprogress" transparent="0" >
+				<convert type="FrontendInfo">NUMBER</convert>
+				<convert type="ValueRange">1,1</convert>
+				<convert type="ConditionalShowHide" />
+			</widget>
+			<!-- TunerInfo */-->
+		</screen>
 		<screen name="INFOBARTUNERINFO-6">
 			<!-- /* TunerInfo -->
 			<eLabel position="286,666" text="A" zPosition="1" size="20,29" font="infobar_text; 24" halign="center" transparent="1" valign="center" backgroundColor="infobarbackground" foregroundColor="infobaraccent2" />
@@ -1559,6 +1611,24 @@
 			<panel name="INFOBAREPGWIDGET_Layer" />
 			<!-- EPGWidget */-->
 		</screen>
+<!-- next_screen_rename_and_stop_mod_srolling-->
+		<screen name="INFOBAREPGWIDGET-2">
+			<!--/* EPGWidget -->
+			<widget backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" font="epg_event; 26" halign="right" noWrap="1" position="70,480" render="Label" size="555,35" source="session.Event_Now" transparent="1" valign="bottom" zPosition="2">
+				<convert type="EventName">Name</convert>
+			</widget>
+			<widget backgroundColor="layer-b-background" foregroundColor="layer-b-accent1" font="epg_event; 26" halign="left" noWrap="1" position="655,458" render="Label" size="555,35" source="session.Event_Next" transparent="1" valign="bottom" zPosition="2">
+				<convert type="EventName">Name</convert>
+			</widget>
+			<widget backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" font="epg_info; 20" halign="right" position="70,158" render="MetrixHDRunningText" options="movetype=running,startpoint=0,direction=top,steptime=20,startdelay=15000,wrap,always=0" valign="top" size="555,315" source="session.Event_Now" transparent="1" zPosition="2">
+				<convert type="EventName">FullDescription</convert>
+			</widget>
+			<widget backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" font="epg_info; 20" halign="left" position="655,184" render="Label" size="555,265" source="session.Event_Next" transparent="1" zPosition="2">
+				<convert type="EventName">FullDescription</convert>
+			</widget>
+			<panel name="INFOBAREPGWIDGET_Layer" />
+			<!-- EPGWidget */-->
+		</screen>
 <!-- next_screen_rename_and_stop_mod -->
 		<screen name="INFOBAREPGWIDGET_is_FHD">
 			<!--/* EPGWidget FHD -->
@@ -1838,6 +1908,64 @@
 		<panel name="rgyb-buttons_screen_pos416_51_size_810_619" />
 		<panel name="rgyb-keys_screen_pos416_51_size_810_619" />
 		<ePixmap name="new ePixmap" position="1125,630" size="81,40" pixmap="MetrixHD/buttons/key_menu.png" />
+	</screen>
+	<!-- CHANNELSELECTION 5 SCROLLLABEL */ -->
+	<screen name="CHANNELSELECTION-5">
+		<eLabel text="Channel selection" position="5,535" size="1280,200" font="global_large_screen; 100" noWrap="0" backgroundColor="text-background" transparent="1" foregroundColor="background-text" valign="bottom" zPosition="-50" />
+		<widget source="Title" render="Label" position="70,47" size="525,50" font="global_title; 35" noWrap="0" valign="top" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
+		<widget name="list" position="70,105" size="700,520" scrollbarMode="showNever" colorServiceRecorded="layer-a-channelselection-foreground-colorServiceRecorded" colorServicePseudoRecorded="layer-a-channelselection-foreground-colorServicePseudoRecorded" colorServiceStreamed="layer-a-channelselection-foreground-colorServiceStreamed" colorServiceDescription="layer-a-channelselection-foreground-ServiceDescription" colorServiceDescriptionSelected="layer-a-channelselection-foreground-ServiceDescriptionSelected" colorEventProgressbarBorder="layer-a-selection-background" colorEventProgressbarBorderSelected="layer-a-channelselection-foregroundColorSelected" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="40" serviceNumberFont="epg_event;26" serviceNameFont="epg_event;26" serviceInfoFont="epg_info;22" transparent="0" backgroundColor="layer-a-background" foregroundColor="layer-a-channelselection-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-channelselection-foregroundColorSelected" itemHeight="40" />
+		<widget source="ServiceEvent" render="Label" position="820,80" size="395,65" font="epg_event; 24" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="center" valign="center">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="843,157" size="64,24" font="epg_event; 21" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="right" valign="bottom" >
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="1128,157" size="77,24" font="epg_event; 21" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" valign="bottom" >
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<eLabel position="914,167" size="206,1" backgroundColor="layer-b-accent1" />
+		<widget source="ServiceEvent" render="Progress" position="914,165" size="206,5" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="ServiceEvent" render="MetrixHDRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,startdelay=8000,wrap,always=0" position="825,195" size="385,250" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="left" valign="top">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<widget source="ServiceEvent" render="MetrixHDSingleEpgList" position="825,460" size="385,125" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" noWrap="1" transparent="0" />
+		<panel name="template1_2layer" />
+		<panel name="rgyb-buttons_template1" />
+		<panel name="rgyb-keys_template1" />
+		<panel name="ime-buttons_template1" />
+	</screen>
+	<!-- CHANNELSELECTION 6 FOCUS LEFT NO PICON 5 NEXT EVENTS 17 ROWS */ -->
+	<screen name="CHANNELSELECTION-6">
+		<eLabel text="Channel selection" position="5,535" size="1280,200" font="global_large_screen; 100" noWrap="0" backgroundColor="text-background" transparent="1" foregroundColor="background-text" valign="bottom" zPosition="-50" />
+		<widget source="Title" render="Label" position="70,47" size="525,50" font="global_title; 35" noWrap="0" valign="top" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
+		<widget name="list" position="70,105" size="700,510" scrollbarMode="showNever" colorServiceRecorded="layer-a-channelselection-foreground-colorServiceRecorded" colorServicePseudoRecorded="layer-a-channelselection-foreground-colorServicePseudoRecorded" colorServiceStreamed="layer-a-channelselection-foreground-colorServiceStreamed" colorServiceDescription="layer-a-channelselection-foreground-ServiceDescription" colorServiceDescriptionSelected="layer-a-channelselection-foreground-ServiceDescriptionSelected" colorEventProgressbarBorder="layer-a-selection-background" colorEventProgressbarBorderSelected="layer-a-channelselection-foregroundColorSelected" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="epg_event;26" serviceNameFont="epg_event;26" serviceInfoFont="epg_info;22" transparent="0" backgroundColor="layer-a-background" foregroundColor="layer-a-channelselection-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-channelselection-foregroundColorSelected" itemHeight="30" />
+		<widget source="ServiceEvent" render="Label" position="820,80" size="395,65" font="epg_event; 24" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="center" valign="center">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="843,157" size="64,24" font="epg_event; 21" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="right" valign="bottom" >
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="1128,157" size="77,24" font="epg_event; 21" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" valign="bottom" >
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<eLabel position="914,167" size="206,1" backgroundColor="layer-b-accent1" />
+		<widget source="ServiceEvent" render="Progress" position="914,165" size="206,5" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="825,195" size="385,250" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="left" valign="top">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<widget source="ServiceEvent" render="MetrixHDSingleEpgList" position="825,460" size="385,125" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" noWrap="1" transparent="0" />
+		<panel name="template1_2layer" />
+		<panel name="rgyb-buttons_template1" />
+		<panel name="rgyb-keys_template1" />
+		<panel name="ime-buttons_template1" />
 	</screen>
 	<!-- CHANNELSELECTION 4 FOCUS RIGHT NO PICON 5 NEXT EVENT */ -->
 	<!-- TEMPLATES */-->
@@ -5550,7 +5678,7 @@ self.instance.move(ePoint(int(deskwidth - newwidth)/2,int(deskheight - newheight
 		<widget name="key_blue" position="619,638" size="220,30" noWrap="1" zPosition="1" valign="center" font="global_button; 20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="1" />
 		<ePixmap position="1045,635" size="81,40" zPosition="10" pixmap="MetrixHD/buttons/key_info.png" transparent="1" alphatest="on" />
 		<ePixmap position="1140,635" size="81,40" zPosition="10" pixmap="MetrixHD/buttons/key_menu.png" transparent="1" alphatest="on" />
-	</screen>
+	</screen>	
 	<screen name="GraphicalInfoBarEPG" title="InfoBar EPG" position="0,490" size="1280,230" backgroundColor="transparent" flags="wfNoBorder">
 		<eLabel name="new eLabel" position="0,10" zPosition="-10" size="1280,220" backgroundColor="layer-a-background" transparent="0" />
 		<widget source="global.CurrentTime" render="Label" position="1128,9" size="140,60" font="global_clock;50" noWrap="1" halign="center" valign="bottom" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
@@ -5625,7 +5753,8 @@ self.instance.move(ePoint(int(deskwidth - newwidth)/2,int(deskheight - newheight
 		<ePixmap position="1140,190" size="81,40" zPosition="10" pixmap="MetrixHD/buttons/key_menu.png" transparent="1" alphatest="on" />
 		<panel name="COLORGRADIENT_Bottom_epg" />
 	</screen>
-	<screen name="EPGSelectionMulti" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder" backgroundColor="transparent">
+	<!-- EPGSelectionMulti-2 NoScrolling /-->
+	<screen name="EPGSELECTIONMULTI-1">
 		<eLabel text="EPG Selection" position="70,47" foregroundColor="layer-a-title-foreground" size="525,50" font="global_title; 35" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap position="70,154" size="700,3" zPosition="1" pixmap="MetrixHD/colors/00ffffff.png" />
 		<widget name="now_button_sel" position="70,150" size="150,5" zPosition="2" pixmap="MetrixHD/colors/00ffffff.png" />
@@ -5645,6 +5774,32 @@ self.instance.move(ePoint(int(deskwidth - newwidth)/2,int(deskheight - newheight
 		<eLabel position="619,665" size="170,10" zPosition="2" backgroundColor="layer-a-background" />
 		<panel name="template1_2layer" />
 		<panel name="ime-buttons_template1" />
+	</screen>
+	<!-- EPGSelectionMulti-2 Scrolling /-->
+		<screen name="EPGSELECTIONMULTI-2">
+		<eLabel text="EPG Selection" position="70,47" foregroundColor="layer-a-title-foreground" size="525,50" font="global_title; 35" backgroundColor="layer-a-background" transparent="1" />
+		<ePixmap position="70,154" size="700,3" zPosition="1" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="now_button_sel" position="70,150" size="150,5" zPosition="2" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="next_button_sel" position="220,150" size="150,5" zPosition="2" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="more_button_sel" position="370,150" size="150,5" zPosition="2" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="now_text" position="70,117" size="150,30" zPosition="3" text="NOW" font="SetrixHD;25" halign="center" backgroundColor="layer-a-background" transparent="1" />
+		<widget name="next_text" position="220,117" size="150,30" zPosition="3" text="NEXT" font="SetrixHD;25" halign="center" backgroundColor="layer-a-background" transparent="1" />
+		<widget name="more_text" position="370,117" size="150,30" zPosition="3" text="MORE" font="SetrixHD;25" halign="center" backgroundColor="layer-a-background" transparent="1" />
+		<widget name="date" position="520,118" size="250,30" font="SetrixHD;22" backgroundColor="layer-a-background" valign="center" halign="right" transparent="1" />
+		<widget name="list" position="70,166" size="700,450" itemHeight="30" font="screen_text; 20" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" enableWrapAround="1" transparent="1" />
+		<widget source="Event" render="MetrixHDRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,startdelay=8000,wrap,always=0" position="825,80" size="385,523" font="epg_info;19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" valign="top">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<panel name="rgyb-buttons_template1" />
+		<panel name="rgy_-keys_template1" />
+		<widget name="key_blue" position="619,639" size="170,30" zPosition="1" valign="top" font="global_button; 20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="1" />
+		<eLabel position="619,665" size="170,10" zPosition="2" backgroundColor="layer-a-background" />
+		<panel name="template1_2layer" />
+		<panel name="ime-buttons_template1" />
+	</screen>
+	
+	<screen name="EPGSelectionMulti" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="EPGSELECTIONMULTI-1" />
 	</screen>
 	<screen name="SimpleChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder" backgroundColor="transparent">
 		<eLabel text="Channel selection" position="70,47" foregroundColor="layer-a-title-foreground" size="525,50" noWrap="0" font="global_title; 35" backgroundColor="layer-a-background" transparent="1" />
@@ -5687,7 +5842,7 @@ self.instance.move(ePoint(int(deskwidth - newwidth)/2,int(deskheight - newheight
 		<panel name="rg__-keys_template1-source" />
 		<ePixmap position="890,175" size="256,256" zPosition="2" pixmap="MetrixHD/icons/swm.png" transparent="1" alphatest="blend" />
 	</screen>
-	<screen name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder" backgroundColor="transparent">
+	<screen name="EPGSELECTION-1">
 		<eLabel text="EPG Selection" position="5,535" size="1280,200" font="global_large_screen; 100" noWrap="0" backgroundColor="text-background" transparent="1" foregroundColor="background-text" valign="bottom" zPosition="-50" />
 <!-- next_line_is_picon -->
 		<widget alphatest="blend" position="70,50" render="MetrixHDXPicon" size="220,132" source="Service" transparent="1" zPosition="1">
@@ -5706,6 +5861,29 @@ self.instance.move(ePoint(int(deskwidth - newwidth)/2,int(deskheight - newheight
 		<widget name="key_blue" position="619,639" size="170,30" zPosition="1" valign="top" font="global_button; 20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="1" />
 		<eLabel position="619,665" size="170,10" zPosition="2" backgroundColor="layer-a-background" />
 		<panel name="ime-buttons_template1" />
+	</screen>
+	<screen name="EPGSELECTION-2">
+		<eLabel text="EPG Selection" position="5,535" size="1280,200" font="global_large_screen; 100" noWrap="0" backgroundColor="text-background" transparent="1" foregroundColor="background-text" valign="bottom" zPosition="-50" />
+<!-- next_line_is_picon -->
+		<widget alphatest="blend" position="70,50" render="MetrixHDXPicon" size="220,132" source="Service" transparent="1" zPosition="1">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget source="Service" render="Label" position="290,120" size="500,50" font="global_title; 35" halign="center" valign="top" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget name="list" position="70,200" size="700,420" font="epg_event;29" zPosition="3" itemHeight="35" enableWrapAround="1" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="0" />
+		<widget source="Event" render="MetrixHDRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,startdelay=8000,wrap,always=0" position="825,80" size="385,523" font="epg_info;19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" valign="top">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<panel name="template1_2layer" />
+		<panel name="rgyb-buttons_template1" />
+		<panel name="rgy_-keys_template1" />
+		<widget name="key_blue" position="619,639" size="170,30" zPosition="1" valign="top" font="global_button; 20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="1" />
+		<eLabel position="619,665" size="170,10" zPosition="2" backgroundColor="layer-a-background" />
+		<panel name="ime-buttons_template1" />
+	</screen>
+	<screen name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="EPGSELECTION-1" />
 	</screen>
 	<screen name="BouquetSelector" position="0,0" size="1280,720" title="Choose bouquet" flags="wfNoBorder" backgroundColor="transparent">
 		<eLabel text="Channel Selection" position="70,47" foregroundColor="layer-a-title-foreground" size="525,50" font="global_title; 35" backgroundColor="layer-a-background" transparent="1" />

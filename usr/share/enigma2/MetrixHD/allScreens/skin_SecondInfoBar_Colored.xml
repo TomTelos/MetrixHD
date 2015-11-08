@@ -1,0 +1,20 @@
+<skin>
+	<screen name="SecondInfoBar" backgroundColor="transparent" flags="wfNoBorder" position="0,0" size="1280,723" title="SecondInfoBar">
+		<panel name="INFOBARKEYSNONVISIBLE" />
+		<panel name="INFOBARSTYLEMODERN" />
+		<panel name="CLOCKWIDGET" />
+		<panel name="INFOBARWEATHERWIDGET" />
+		<panel name="INFOBARSERVICEINFO" />
+		<panel name="INFOBARRECORDSTATE" />
+		<panel name="INFOBARRESOLUTION-3" />
+		<panel name="INFOBARORBITALPOSITION-3" />
+		<panel name="INFOBARSNR-3" />
+		<panel name="INFOBARTUNERINFO-2_5" />
+		<!--panel name="STBINFO" /-->
+		<!--panel name="INFOBAREXTENDEDINFO" /-->
+		<!-- <panel name="GRIDLINES" /> */-->
+		<panel name="INFOBAREPGWIDGET" />
+		<!--panel name="STBINFO" /-->
+		<!--panel name="INFOBAREXTENDEDINFO" /-->
+	</screen>	
+</skin>
