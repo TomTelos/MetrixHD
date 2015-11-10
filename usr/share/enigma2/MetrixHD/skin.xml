@@ -2,7 +2,7 @@
 	<!-- MetrixHD v2.5 by iMaxxx | optimized for openATV 4.0 -->
 	<!-- recommended to use with XPicons -->
 	<!-- You can modify and redistribute it as long as you keep this license and the original author for the skin and all of your modifications -->
-	<!-- Modified by TomTelos for Graterlia OS (ver.2015-11-08)-->
+	<!-- Modified by TomTelos for Graterlia OS (ver.2015-11-10)-->
 	<output id="0">
 		<resolution xres="1280" yres="720" bpp="32" />
 	</output>
@@ -715,7 +715,7 @@
 		<screen name="MOVIENAME">
 			<!--/* MOVIE NAME -->
 			<widget font="global_large; 80" backgroundColor="text-background" foregroundColor="background-text" noWrap="1" position="30,465" render="Label" size="1252,105" source="session.CurrentService" transparent="1" valign="bottom" zPosition="-30">
-				<convert type="MetrixHDExtServiceInfo">ServiceNumberAndName</convert>
+				<convert type="MetrixHDExtServiceInfo">ServiceName</convert>
 			</widget>
 			<!-- MOVIE NAME */-->
 		</screen>
@@ -1929,10 +1929,23 @@
 		<widget source="ServiceEvent" render="Progress" position="914,165" size="206,5" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
 			<convert type="EventTime">Progress</convert>
 		</widget>
-		<widget source="ServiceEvent" render="MetrixHDRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,startdelay=8000,wrap,always=0" position="825,195" size="385,250" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="left" valign="top">
+		<!--widget source="ServiceEvent" render="MetrixHDRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,startdelay=8000,wrap,always=0" position="825,195" size="385,250" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="left" valign="top">
 			<convert type="EventName">FullDescription</convert>
 		</widget>
-		<widget source="ServiceEvent" render="MetrixHDSingleEpgList" position="825,460" size="385,125" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" noWrap="1" transparent="0" />
+		<widget source="ServiceEvent" render="MetrixHDSingleEpgList" position="825,460" size="385,125" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" noWrap="1" transparent="0" /-->
+		<widget source="ServiceEvent" render="MetrixHDRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,startdelay=8000,wrap,always=0" position="825,195" size="385,300" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="0" halign="left" valign="top">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+		<eLabel position="825,509" size="385,1" backgroundColor="layer-b-foreground" transparent="0"/>
+		<widget source="ServiceEvent" render="Label" position="825,515" size="385,26" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" noWrap="1" transparent="0">
+			<convert type="MetrixHDNextEvents">Event1,noDuration</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="825,541" size="385,26" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" noWrap="1" transparent="0">
+			<convert type="MetrixHDNextEvents">Event2,noDuration</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="825,567" size="385,26" font="epg_info; 19" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" noWrap="1" transparent="0">
+			<convert type="MetrixHDNextEvents">Event3,noDuration</convert>
+		</widget>		
 		<panel name="template1_2layer" />
 		<panel name="rgyb-buttons_template1" />
 		<panel name="rgyb-keys_template1" />
@@ -5038,9 +5051,9 @@ self.instance.move(ePoint(0,0))
 		<widget name="header" position="70,110" size="700,30" font="SetrixHD;22" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" halign="center" transparent="1" noWrap="1" />
 		<eLabel position="70,170" size="700,46" zPosition="1" backgroundColor="layer-a-accent1" />
 		<widget name="text" position="72,172" size="696,42" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" zPosition="3" font="SetrixHD;30" noWrap="1" valign="center" halign="right" />
-		<widget name="list" position="145,320" size="545,230" selectionDisabled="1" transparent="1" />
+		<widget name="list" position="72,320" size="700,230" selectionDisabled="1" transparent="1"/>
 		<widget name="country" position="810,415" size="415,190" font="screen_info; 20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1"/>
-		<panel name="_oe-buttons_template1" />
+		<panel name="_oe-buttons_template1"/>
 		<ePixmap position="890,175" size="256,256" zPosition="2" pixmap="MetrixHD/icons/keyb.png" transparent="1" alphatest="blend" />
 	</screen>
 	<screen name="MessageBox-template-0">
