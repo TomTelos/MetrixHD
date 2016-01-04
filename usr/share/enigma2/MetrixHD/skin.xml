@@ -2,7 +2,7 @@
 	<!-- MetrixHD v2.5 by iMaxxx | optimized for openATV 4.0 -->
 	<!-- recommended to use with XPicons -->
 	<!-- You can modify and redistribute it as long as you keep this license and the original author for the skin and all of your modifications -->
-	<!-- Modified by TomTelos for Graterlia OS (ver.2015-11-10)-->
+	<!-- Modified by TomTelos for Graterlia OS (ver.2016-01-04)-->
 	<output id="0">
 		<resolution xres="1280" yres="720" bpp="32" />
 	</output>
@@ -9258,7 +9258,7 @@ self.instance.move(ePoint(int(deskwidth - newwidth)/2,int(deskheight - newheight
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<eLabel position="146,145" size="990,1" backgroundColor="layer-a-accent1" />
-		<widget name="timeline_text" position="0,305" size="1280,25" selectionDisabled="1" transparent="1" />
+		<widget name="timeline_text" position="70,305" size="1280,25" selectionDisabled="1" transparent="1" />
 		<widget name="list" position="70,335" size="1160,300" itemHeight="60" EntryBorderColor="layer-a-foreground" EntryBackgroundColor="layer-a-background" EntryBackgroundColorSelected="layer-a-accent1" scrollbarMode="showOnDemand" transparent="1" />
 		<widget name="timeline0" position="0,398" zPosition="1" size="1,230" pixmap="MetrixHD/colors/00ffffff.png" />
 		<widget name="timeline1" position="0,398" zPosition="1" size="1,230" pixmap="MetrixHD/colors/00ffffff.png" />
@@ -10656,5 +10656,14 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
 		<widget name="config" zPosition="2" position="70,120" size="710,455" scrollbarMode="showOnDemand" transparent="1" />
 		<widget name="current_entry" position="70,585" size="710,40" font="SetrixHD;18" halign="center" valign="center" />
 		<ePixmap position="890,175" size="256,256" zPosition="2" pixmap="MetrixHD/icons/led.png" transparent="1" alphatest="blend" />
+	</screen>
+	<screen name="AdvancedFreePlayerInfobar" position="0,0" size="1280,720" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MoviePlayer_1" />
+		<panel name="MoviePlayer_1_time" />
+		<panel name="CLOCKWIDGET" />
+		<panel name="MOVIENAME" />
+		<panel name="COLORGRADIENT_Bottom" />
+		<!--panel name="STBINFOMOVIEPLAYER" /-->
+		<!--panel name="STBINFO" /-->
 	</screen>
 </skin>
