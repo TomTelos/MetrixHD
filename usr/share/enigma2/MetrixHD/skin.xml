@@ -2,7 +2,7 @@
 	<!-- MetrixHD v2.5 by iMaxxx | optimized for openATV 4.0 -->
 	<!-- recommended to use with XPicons -->
 	<!-- You can modify and redistribute it as long as you keep this license and the original author for the skin and all of your modifications -->
-	<!-- Modified by TomTelos for Graterlia OS (ver.2016-01-04)-->
+	<!-- Modified by TomTelos for Graterlia OS (ver.2016-01-25)-->
 	<output id="0">
 		<resolution xres="1280" yres="720" bpp="32" />
 	</output>
@@ -9260,13 +9260,13 @@ self.instance.move(ePoint(int(deskwidth - newwidth)/2,int(deskheight - newheight
 		<eLabel position="146,145" size="990,1" backgroundColor="layer-a-accent1" />
 		<widget name="timeline_text" position="70,305" size="1280,25" selectionDisabled="1" transparent="1" />
 		<widget name="list" position="70,335" size="1160,300" itemHeight="60" EntryBorderColor="layer-a-foreground" EntryBackgroundColor="layer-a-background" EntryBackgroundColorSelected="layer-a-accent1" scrollbarMode="showOnDemand" transparent="1" />
-		<widget name="timeline0" position="0,398" zPosition="1" size="1,230" pixmap="MetrixHD/colors/00ffffff.png" />
-		<widget name="timeline1" position="0,398" zPosition="1" size="1,230" pixmap="MetrixHD/colors/00ffffff.png" />
-		<widget name="timeline2" position="0,398" zPosition="1" size="1,230" pixmap="MetrixHD/colors/00ffffff.png" />
-		<widget name="timeline3" position="0,398" zPosition="1" size="1,230" pixmap="MetrixHD/colors/00ffffff.png" />
-		<widget name="timeline4" position="0,398" zPosition="1" size="1,230" pixmap="MetrixHD/colors/00ffffff.png" />
-		<widget name="timeline5" position="0,398" zPosition="1" size="1,230" pixmap="MetrixHD/colors/00ffffff.png" />
-		<widget name="timeline_now" position="0,330" zPosition="2" size="5,295" pixmap="MetrixHD/colors/00ffffff.png" alphatest="blend" />
+		<widget name="timeline0" position="0,398" zPosition="1" size="0,230" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="timeline1" position="0,398" zPosition="1" size="0,230" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="timeline2" position="0,398" zPosition="1" size="0,230" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="timeline3" position="0,398" zPosition="1" size="0,230" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="timeline4" position="0,398" zPosition="1" size="0,230" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="timeline5" position="0,398" zPosition="1" size="0,230" pixmap="MetrixHD/colors/00ffffff.png" />
+		<widget name="timeline_now" position="0,330" zPosition="2" size="2,295" pixmap="MetrixHD/colors/00E51400.png" alphatest="blend" />
 		<ePixmap pixmap="MetrixHD/buttons/key_red.png" position="70,635" size="30,40" alphatest="blend" />
 		<ePixmap pixmap="MetrixHD/buttons/key_green.png" position="265,635" size="30,40" alphatest="blend" />
 		<widget name="key_red" position="105,638" size="180,30" zPosition="1" valign="center" font="global_button;20" halign="left" foregroundColor="layer-a-button-foreground" backgroundColor="layer-a-background" transparent="1" />
